@@ -42,7 +42,12 @@ The final output is saved as a ```.xlsx``` format.
 The cost was approximatelly $2.50.
 
 ### 7. Validating descriptions and summaries
-WIP
+To validate the descriptions and summaries of the ideas we calculated that the sample size that needs to be checked is 210 for the given the dataset population (933), a confidence level of 90% and a margin of error of 5%.
+As such, a random list of 210 image IDs was generated and the images were manually checked against the descriptions and summaries.
+We deemed an "idea description": ```valid``` if the description exactly matched the image one and ```invalid``` if it did not perfectly matched.
+We deemed a "summary": to be ```valid``` if it conveyed the main function and overall priciple of the idea and ```invalid``` otherwise.
+
+We specified **a priori** a thrreshold of 70%&#177;5% as the target range. If after the validation process the estimated proportion of correct idea descriptions and summaries, the prompts will be adjusted and the whole process done again.
 
 ### 8. Extracting text embedding for the descriptions
 Once all the images have a summary em get the text embedding for each idea using the OpenAI API (model ```text-embedding-3-large```).
