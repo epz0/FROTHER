@@ -1,4 +1,7 @@
 *.env
 *.pyc
 *.txt
+*.npy
 IdeasDescriptions.xlsx
+IdeasDescEmbed.xlsx
+IdeasDescEmbed.csv

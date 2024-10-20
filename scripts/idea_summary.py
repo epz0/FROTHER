@@ -11,6 +11,7 @@ from load_images import *
 from prompt_template import *
 from image_message import *
 from format_output import *
+from dist_matrix import *
 
 #%%
 # getting api key from .env file saved in the root folder
@@ -166,5 +167,20 @@ f_out = '../output'
 ls_jsons = read_output(f_out)
 
 ls_all, df = format_read_file(ls_jsons)
-#%%
+
 df.to_excel(f'{f_out}/IdeasDescriptions.xlsx')
+
+#%%
+#! getting text embedding for the summary
+client = OpenAI()
+embedding_model = 'text-embedding-3-large'
+def get_embedding(text, model=embedding_model):
+    text = text.replace("\n", " ")
+    return client.embeddings.create(input = [text], model=model).data[0].embedding
+
+df["embedding"] = df.summary.apply(lambda x: get_embedding(x, model=embedding_model))
+
+df.to_csv(f'{f_out}/IdeasDescEmbed.csv')
+df.to_excel(f'{f_out}/IdeasDescEmbed.xlsx')
+
+dmx_sem = dissimilarity_matrix(f_out, df)

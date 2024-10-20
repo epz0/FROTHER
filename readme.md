@@ -39,6 +39,13 @@ Given the need to exclude image ```434.png``` as it was a rejected idea, the fin
 All images have a field called "Idea Description" in which participants had to describe their image. We used the OpenAI API vision capabilities (model ```gpt-4o-2024-08-06```).
 The prompts are structured in ```jinja``` files. We use ```pydantic``` to format the output.
 The final output is saved as a ```.xlsx``` format.
+The cost was approximatelly $2.50.
 
 ### 7. Validating descriptions and summaries
 WIP
+
+### 8. Extracting text embedding for the descriptions
+Once all the images have a summary em get the text embedding for each idea using the OpenAI API (model ```text-embedding-3-large```).
+Subsequently a pairwise distance matrix is calculated, using the cosine distance between each idea.
+The final output is saved as a ```.npy``` format.
+The cost was approximatelly WIP.
