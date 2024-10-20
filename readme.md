@@ -22,7 +22,7 @@ Given that the original podf file contained 1 image per page, we obtained 934 pd
 We used [pdf24](https://www.pdf24.org/en/) to convert each of the pdfs into .png files. The image names corresponded to the page number. The output images were in A4 size, whereas the actual area that was used for sketching and annottations was smaller, in the center of the page.
 
 ### 3. Cropping the images
-We cropped the 934 images to focus only on the actual area that was used for sketching and annottations. The image dimensions after this step is 2550 x 1910 pixels.  
+We cropped the 934 images to focus only on the actual area that was used for sketching and annottations. The images were subsequently rescaled to 1020 x 764 pixels. We used [XnView MP](https://www.xnview.com/en/) to batch process the images.
 
 ### 4. Linking participant IDs, idea numbers and images
 We looked through all the images, noting the participant ID shown, the idea number and the filename. We created a spreadsheet linking this information. A unique identifier was created in the format ```P_X-Y``` where X is the participant ID number and Y is the idea number. In this process the following issues were identified and addressed:
