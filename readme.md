@@ -4,7 +4,9 @@ Based on the dataset originally published by [Toh & Miller (2018)](https://sites
 
 The original dataset included a single pdf file with 934 digitised sketches created by participants and a spreadsheet with the "creativity", "novelty" and "quality" values for the ideas.
 
-The **FROTHER dataset** builds from this data, systematically organising and extending the dataset. Below is a summary of the contents:
+The **FROTHER dataset** builds from this data, systematically organising and extending the dataset. Below is a summary of the contents and details of the process undertaken to further expand the dataset.
+
+Please cite this version of the dataset as _Paravizo, E. (2024). Frother dataset._
 
 ##
 
@@ -54,9 +56,9 @@ We deemed a "summary": to be ```valid (1)``` if it conveyed the main function an
 \
 We further analysed the inconsistencies identifying instances where minor mistakes (e.g., single word missing/replaced) happpened. This analysis is detailed in the ```validation.xlsx``` document.\
 \
-We specified **a priori** a threshold of **70%&#177;5%** as the target range. If after the validation process the estimated proportion of correct idea descriptions and summaries, the prompts will be adjusted and the whole process done again.
+We specified **a priori** threshold of **70%&#177;5%** as the target range. If after the validation process the estimated proportion of correct idea descriptions and summaries fall below this threshold, the prompts will be adjusted and the whole process done again.
 
-**Validation results**\
+### 8. Validation results**
 a. _Idea Description_\
 ```absolute error rate = 15.24% (n=32)```\
 ```error rate disconsidering minor mistakes = 10.48% (n=22)```\
@@ -75,7 +77,7 @@ Thus, the percentage of correct idea summaries is well above the _a priori_ spec
 \
 Based on this, the generated text descriptions and summaries are **deemed to be satisfactory** and it will not be necessary to re-run the analysis.\
 
-### 8. Extracting text embedding for the descriptions
+### 9. Extracting text embedding for the descriptions
 Once all the images have a summary em get the text embedding for each idea using the OpenAI API (model ```text-embedding-3-large```).\
 Subsequently a pairwise distance matrix is calculated, using the cosine distance between each idea.\
 The final output is saved as a ```.npy``` format.\
