@@ -43,14 +43,33 @@ The cost was approximatelly $2.50.
 
 ### 7. Validating descriptions and summaries
 To validate the descriptions and summaries of the ideas we calculated that the sample size that needs to be checked is 210 for the given the dataset population (933), a confidence level of 90% and a margin of error of 5%.
-As such, a random list of 210 image IDs was generated and the images were manually checked against the descriptions and summaries.
-We deemed an "idea description": ```valid``` if the description exactly matched the image one and ```invalid``` if it did not perfectly matched.
-We deemed a "summary": to be ```valid``` if it conveyed the main function and overall priciple of the idea and ```invalid``` otherwise.
+As such, a random list of 210 image IDs was generated and the images were manually checked against the descriptions and summaries.\
+We deemed an "idea description": ```valid (1)``` if the description exactly matched the image one and ```invalid (0)``` if it did not perfectly matched.\
+We deemed a "summary": to be ```valid (1)``` if it conveyed the main function and overall priciple of the idea and ```invalid (0)``` otherwise.\
+We further analysed the inconsistencies identifying instances where minor mistakes (e.g., single word missing/replaced) happpened. This analysis is detailed in the ```validation.xlsx``` document.\
 
-We specified **a priori** a thrreshold of 70%&#177;5% as the target range. If after the validation process the estimated proportion of correct idea descriptions and summaries, the prompts will be adjusted and the whole process done again.
+We specified **a priori** a threshold of 70%&#177;5% as the target range. If after the validation process the estimated proportion of correct idea descriptions and summaries, the prompts will be adjusted and the whole process done again.
+
+**Validation results**\
+a. _Idea Description_\
+```absolute error rate = 15.24% (n=32)```\
+```error rate disconsidering minor mistakes = 10.48% (n=22)```\
+\
+For these values we can say with 90% confidence that the percentage of **absolute errors** in the generation of **descriptions** ranges between **11.16%** and **19.32%**.\
+If we disregard the minor mistakes the percentage of **errors disconsidering minorones** ranges between **7.00%** and **13.95%**.\
+\
+Thus, in both cases, the percentage of correct ideas is well above the _a priori_ specified threshold of 70%&#177;5%.\
+\
+b. _Idea Summary_\
+```absolute error rate = 2.86% (n=6)```\
+For this value we can say with 90% confidence that the percentage of **absolute errors** in the generation of **idea summaries** ranges between **0.97%** and **4.75%**.\
+\
+Thus, the percentage of correct idea summaries is well above the _a priori_ specified threshold of 70%&#177;5%.\
+\
+Based on this, the generated text descriptions and summaries are deemed to be satisfactory an it will not be necessary to re-run the analysis.\
 
 ### 8. Extracting text embedding for the descriptions
 Once all the images have a summary em get the text embedding for each idea using the OpenAI API (model ```text-embedding-3-large```).
 Subsequently a pairwise distance matrix is calculated, using the cosine distance between each idea.
 The final output is saved as a ```.npy``` format.
-The cost was approximatelly WIP.
+The cost was negligible.
