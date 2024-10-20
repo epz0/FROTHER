@@ -26,8 +26,8 @@ We cropped the 934 images to focus only on the actual area that was used for ske
 
 ### 4. Linking participant IDs, idea numbers and images
 We looked through all the images, noting the participant ID shown, the idea number and the filename. We created a spreadsheet linking this information. A unique identifier was created in the format ```P_X-Y``` where X is the participant ID number and Y is the idea number. In this process the following issues were identified and addressed:
-- For participant 75, the idea 10 was rejected. This idea was present on the original dataset (page 434) but was not present in the analysis spreadsheet. As such, we deleted image 434.png from the dataset and adjusted the idea numbers for participant 75.
-- Participant 19 had 2 ideas analysed in the original spreadsheet. However only one image (002.png) was found with the Participant Id #19. We saw that image ```001.png``` had no participant ID and was similar in content and handwriting to the image ```002.png```. Hence we  attributed image ```001.png``` to participant 19.
+- For participant 75, the idea 10 was rejected. This idea was present on the original dataset (```page 434```) but was not present in the analysis spreadsheet. As such, we deleted image 434.png from the dataset and adjusted the idea numbers for participant 75.
+- Participant 19 had 2 ideas analysed in the original spreadsheet. However only one image (```002.png```) was found with the Participant Id #19. We saw that image ```001.png``` had no participant ID and was similar in content and handwriting to the image ```002.png```. Hence we  attributed image ```001.png``` to participant 19.
 - For participant 145, no idea #2 was found, thus the numbers were adjusted accordingly (see image ```827.png``` onwards).
 - For participant 122, no idea #1 was found, thus the numbers were adjusted accordingly (see image ```685.png``` onwards).
 - Whenever idea numbers were adjusted the corresponding original analysis has been appropriatelly linked.
@@ -35,9 +35,10 @@ We looked through all the images, noting the participant ID shown, the idea numb
 ### 5. Final pool of images
 Given the need to exclude image ```434.png``` as it was a rejected idea, the final number of images in this dataset is **933**.
 
-### 6. Extracting idea description
-WIP
+### 6. Extracting idea description and idea summary
+All images have a field called "Idea Description" in which participants had to describe their image. We used the OpenAI API vision capabilities (model ```gpt-4o-2024-08-06```).
+The prompts are structured in ```jinja``` files. We use ```pydantic``` to format the output.
+The final output is saved as a ```.xlsx``` format.
 
-### 7. Extracting idea summary
+### 7. Validating descriptions and summaries
 WIP
-
