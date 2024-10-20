@@ -20,7 +20,7 @@ Please cite this version of the dataset as _Paravizo, E. (2024). Frother dataset
 ## Data processing
 To create this updated dataset the following steps were taken:
 
-### 1. Splitting the pdf original pdf file
+### 1. Splitting the original pdf file
 Given that the original podf file contained 1 image per page, we obtained 934 pdf files. We used [pdf24](https://www.pdf24.org/en/) for this step.
 
 ### 2. Convertting each individual pdf file to png
