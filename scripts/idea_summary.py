@@ -49,7 +49,7 @@ class DesignIdea(BaseModel):
 
 out_schema = DesignIdea.model_json_schema()
 
-df = pd.DataFrame(columns=['ID', 'description', 'summary'])
+df_all = pd.DataFrame(columns=['ID', 'description', 'summary'])
 
 #%% loading prompts
 detail = "high"
@@ -82,7 +82,7 @@ ls_all_ids = get_all_ids(f_img)
 #%%
 #! Looping through all
 n=10
-for k in range(610, len(ls_all_ids), n):
+for k in range(870, len(ls_all_ids), n):
     test_set = ls_all_ids[k:k+n]  # Slicing the list in groups of 10
     print(test_set)
 
@@ -159,16 +159,12 @@ for k in range(610, len(ls_all_ids), n):
     with open(f'output_{k}.txt', 'w') as file:
         file.write('\n '.join(ls_json_output))
 
-    #! transforming into json/df
-    ls_ideas = []
-    ls_jsons = []
+#%%
+#! transforming into json/df
+f_out = '../output'
 
-    for i in range(len(ls_json_output)):
-        #ls_ideas.append(DesignIdea(**json.loads(ls_json_output[i])))
-        ls_jsons.append(json.loads(ls_json_output[i]))
+ls_jsons = read_output(f_out)
 
-    df_ideas = pd.DataFrame(ls_jsons)
-    df_all = pd.concat([df, df_ideas])
-
-
-# %%
+ls_all, df = format_read_file(ls_jsons)
+#%%
+df.to_excel(f'{f_out}/IdeasDescriptions.xlsx')
