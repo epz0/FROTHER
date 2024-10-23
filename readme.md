@@ -63,7 +63,7 @@ a. _Idea Description_\
 ```absolute error rate = 15.24% (n=32)```\
 ```error rate disconsidering minor mistakes = 10.48% (n=22)```\
 \
-For these values we can say with 90% confidence that the percentage of **absolute errors** in the generation of **descriptions** ranges between **```11.16%** and **19.32%.```**\
+For these values we can say with 90% confidence that the percentage of **absolute errors** in the generation of **descriptions** ranges between **```11.16% and 19.32%.```**\
 \
 If we disregard the minor mistakes the percentage of **errors disconsidering minorones** ranges between **```7.00% and 13.95%.```**\
 \
@@ -71,7 +71,7 @@ Thus, in both cases, the percentage of correct ideas is well above the _a priori
 \
 b. _Idea Summary_\
 ```absolute error rate = 2.86% (n=6)```\
-For this value we can say with 90% confidence that the percentage of **absolute errors** in the generation of **idea summaries** ranges between ```**0.97%** and **4.75%**.```\
+For this value we can say with 90% confidence that the percentage of **absolute errors** in the generation of **idea summaries** ranges between **```0.97% and 4.75%.```**\
 \
 Thus, the percentage of correct idea summaries is well above the _a priori_ specified threshold of **70%&#177;5%.**\
 \
