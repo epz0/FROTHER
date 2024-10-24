@@ -6,7 +6,6 @@ The original dataset included a single pdf file with 934 digitised sketches crea
 
 The **FROTHER dataset** builds from this data, systematically organising and extending the dataset. Below is a summary of the contents and details of the process undertaken to further expand the dataset.
 
-Please cite this version of the dataset as _Paravizo, E. (2024). Frother dataset._
 
 ##
 
